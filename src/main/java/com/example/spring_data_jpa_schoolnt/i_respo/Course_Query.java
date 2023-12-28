@@ -1,11 +1,8 @@
 package com.example.spring_data_jpa_schoolnt.i_respo;
 
 import com.example.spring_data_jpa_schoolnt.entities.Course;
-
-
+import com.example.spring_data_jpa_schoolnt.entities.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 
-public interface CourseRepository extends CrudRepository<Course, Long> {
+public interface Course_Query extends JpaRepository<Course, Long> {
 }
-
