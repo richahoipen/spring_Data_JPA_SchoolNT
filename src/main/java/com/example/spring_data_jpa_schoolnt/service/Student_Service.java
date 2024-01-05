@@ -17,4 +17,14 @@ public class Student_Service {
     public List<Student> getAllStudents() {
         return student_query.findAll();
     }
+    public boolean addStudent(Student newStudent) {
+        try {
+            student_query.save(newStudent);
+            return true;
+        } catch (Exception e) {
+            // Xử lý ngoại lệ hoặc ghi log nếu cần thiết
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
 }

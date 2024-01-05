@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_student")
+    @Column(name = "id_Student")
     private Long id_Student;
 
     private String name;
@@ -16,6 +16,17 @@ public class Student {
     @ManyToOne
     @JoinColumn(name = "id_Course")
     private Course course;
+
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    private Account_Student account_student;
+
+    public Account_Student getAccount_student() {
+        return account_student;
+    }
+
+    public void setAccount_student(Account_Student account_student) {
+        this.account_student = account_student;
+    }
 
     public Long getId_Student() {
         return id_Student;

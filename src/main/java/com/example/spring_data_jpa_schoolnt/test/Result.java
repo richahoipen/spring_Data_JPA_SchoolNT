@@ -26,6 +26,7 @@ public class Result implements CommandLineRunner {
             sum_Age+=student.getAge();
         }
         System.out.println("Sum of age: "+sum_Age);
+        student_service.addStudent(new Student("Lisa",10));
 
     }
 }
